@@ -1,3 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpytorch_safe_defaults"
+version = "0.1.0"
+description = "Safe defaults for linear_operator computations in GPyTorch"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Austin Tripp", email = "austin.tripp@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/AustinT/gpytorch_safe_defaults"
+
+[project.dependencies]
+linear_operator = ">=0.5.0"
+
 [tool.black]
 line-length = 120
 target-version = ['py312']
