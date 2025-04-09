@@ -10,8 +10,10 @@ class SafeDefaults:
         """Set safe defaults for linear_operator computations."""
         try:
             import linear_operator
-        except ImportError:
-            raise ImportError("linear_operator is not installed. Please install it with: pip install linear_operator")
+        except ImportError as err:
+            raise ImportError(
+                "linear_operator is not installed. Please install it with: pip install linear_operator"
+            ) from err
 
         linear_operator.settings._fast_covar_root_decomposition._default = False
         linear_operator.settings._fast_log_prob._default = False
@@ -21,8 +23,10 @@ class SafeDefaults:
         """Context manager to temporarily set safe defaults."""
         try:
             import linear_operator
-        except ImportError:
-            raise ImportError("linear_operator is not installed. Please install it with: pip install linear_operator")
+        except ImportError as err:
+            raise ImportError(
+                "linear_operator is not installed. Please install it with: pip install linear_operator"
+            ) from err
 
         with linear_operator.settings.fast_computations(False, False, False):
             yield
