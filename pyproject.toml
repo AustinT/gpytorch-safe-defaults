@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/AustinT/gpytorch_safe_defaults"
+Homepage = "https://github.com/AustinT/gpytorch-safe-defaults"
 
 [project.optional-dependencies]
 dev = [
