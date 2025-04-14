@@ -14,6 +14,8 @@ we provide a single object to turn them *all* off.
 
 ## Installation
 
+Clone the repo, then install with pip:
+
 ```bash
 pip install actually_exact_gpytorch
 ```
