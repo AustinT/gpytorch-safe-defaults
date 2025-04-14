@@ -1,7 +1,16 @@
-# actually_exact_gpytorch
+# Actually exact GPyTorch
 
-A small package to set safe defaults for linear_operator computations in GPyTorch
-(turning off many approximations which are on by default).
+<div align="center">
+<i>A convenient way to make GPyTorch use exact GP inference!</i>
+</div>
+<br>
+
+By default, GPyTorch uses a bunch of approximations to help GP inference run
+faster than O(N^3). _Normally_ these work well, but there are many circumstances
+when these approximations fail, most prominently when the condition number of the
+covariance matrix is large. For this reason, some users prefer to turn the approximations off.
+This package makes this easy. Instead of turning the approximations off one by one,
+we provide a single object to turn them *all* off.
 
 ## Installation
 
@@ -38,7 +47,7 @@ When used, this package sets the following linear_operator settings to `False`:
 - `_fast_log_prob._default`
 - `_fast_solves._default`
 
-This ensures more numerically stable computations in GPyTorch, though potentially at the cost of some performance.
+NOTE: future versions of this package may turn off more things (as needed).
 
 ## License
 
