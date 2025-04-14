@@ -1,8 +1,3 @@
-"""
-gpytorch_safe_defaults - A package to set safe defaults for linear_operator computations.
-"""
-
-
 class SafeDefaults:
     """A class to manage safe defaults for linear_operator computations."""
 

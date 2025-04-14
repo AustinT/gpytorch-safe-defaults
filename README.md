@@ -1,4 +1,4 @@
-# gpytorch_safe_defaults
+# actually_exact_gpytorch
 
 A small package to set safe defaults for linear_operator computations in GPyTorch
 (turning off many approximations which are on by default).
@@ -6,7 +6,7 @@ A small package to set safe defaults for linear_operator computations in GPyTorc
 ## Installation
 
 ```bash
-pip install gpytorch_safe_defaults
+pip install actually_exact_gpytorch
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ The package provides a single object `safe_defaults` that can be used in two way
 1. As a function to set safe defaults globally:
 
 ```python
-from gpytorch_safe_defaults import safe_defaults
+from actually_exact_gpytorch import safe_defaults
 
 safe_defaults()  # Sets safe defaults globally
 ```
@@ -24,7 +24,7 @@ safe_defaults()  # Sets safe defaults globally
 2. As a context manager to temporarily set safe defaults:
 
 ```python
-from gpytorch_safe_defaults import safe_defaults
+from actually_exact_gpytorch import safe_defaults
 
 with safe_defaults:
     # Your code here with safe defaults
@@ -45,7 +45,7 @@ This ensures more numerically stable computations in GPyTorch, though potentiall
 ```python
 import torch
 import gpytorch
-from gpytorch_safe_defaults import safe_defaults
+from actually_exact_gpytorch import safe_defaults
 
 # Without safe defaults
 model1 = gpytorch.models.ExactGP(...)  # Uses default settings

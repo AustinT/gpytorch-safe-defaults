@@ -3,14 +3,14 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "gpytorch_safe_defaults"
+name = "actually_exact_gpytorch"
 version = "0.1.0"
 description = "Safe defaults for linear_operator computations in GPyTorch"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Austin Tripp", }
+    {name = "Austin Tripp"}
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -55,4 +55,4 @@ select = [
 ignore = []
 
 [tool.ruff.isort]
-known-first-party = ["gpytorch_safe_defaults"]
+known-first-party = ["actually_exact_gpytorch"]

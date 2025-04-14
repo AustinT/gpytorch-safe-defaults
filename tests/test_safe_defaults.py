@@ -2,7 +2,7 @@ import gpytorch
 import linear_operator
 import torch
 
-from gpytorch_safe_defaults import safe_defaults
+from actually_exact_gpytorch import safe_defaults
 
 
 class ExactGPModel(gpytorch.models.ExactGP):
