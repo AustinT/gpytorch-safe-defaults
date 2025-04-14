@@ -1,4 +1,4 @@
-class SafeDefaults:
+class ExactGpytorch:
     """A class to manage safe defaults for linear_operator computations."""
 
     def _import_linear_operator(self):
@@ -30,4 +30,4 @@ class SafeDefaults:
         pass
 
 
-safe_defaults = SafeDefaults()
+exact_gpytorch = ExactGpytorch()

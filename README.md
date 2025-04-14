@@ -11,22 +11,22 @@ pip install actually_exact_gpytorch
 
 ## Usage
 
-The package provides a single object `safe_defaults` that can be used in two ways:
+The package provides a single object `exact_gpytorch` that can be used in two ways:
 
 1. As a function to set safe defaults globally:
 
 ```python
-from actually_exact_gpytorch import safe_defaults
+from actually_exact_gpytorch import exact_gpytorch
 
-safe_defaults()  # Sets safe defaults globally
+exact_gpytorch()  # Sets safe defaults globally
 ```
 
 2. As a context manager to temporarily set safe defaults:
 
 ```python
-from actually_exact_gpytorch import safe_defaults
+from actually_exact_gpytorch import exact_gpytorch
 
-with safe_defaults:
+with exact_gpytorch:
     # Your code here with safe defaults
     pass
 ```
@@ -39,21 +39,6 @@ When used, this package sets the following linear_operator settings to `False`:
 - `_fast_solves._default`
 
 This ensures more numerically stable computations in GPyTorch, though potentially at the cost of some performance.
-
-## Example
-
-```python
-import torch
-import gpytorch
-from actually_exact_gpytorch import safe_defaults
-
-# Without safe defaults
-model1 = gpytorch.models.ExactGP(...)  # Uses default settings
-
-# With safe defaults
-with safe_defaults:
-    model2 = gpytorch.models.ExactGP(...)  # Uses safe defaults
-```
 
 ## License
 

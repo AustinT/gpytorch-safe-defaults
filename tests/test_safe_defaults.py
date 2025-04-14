@@ -2,7 +2,7 @@ import gpytorch
 import linear_operator
 import torch
 
-from actually_exact_gpytorch import safe_defaults
+from actually_exact_gpytorch import exact_gpytorch
 
 
 class ExactGPModel(gpytorch.models.ExactGP):
@@ -17,7 +17,7 @@ class ExactGPModel(gpytorch.models.ExactGP):
         return gpytorch.distributions.MultivariateNormal(mean_x, covar_x)
 
 
-def test_safe_defaults_context():
+def test_exact_gpytorch_context():
     # Create some toy data
     train_x = torch.randn(10, 2)
     train_y = torch.randn(10)
@@ -27,7 +27,7 @@ def test_safe_defaults_context():
     _ = ExactGPModel(train_x, train_y, likelihood)
 
     # Create model with safe defaults
-    with safe_defaults:
+    with exact_gpytorch:
         _ = ExactGPModel(train_x, train_y, likelihood)
 
     # Check that the settings are different
@@ -36,9 +36,9 @@ def test_safe_defaults_context():
     assert linear_operator.settings._fast_solves._default is True
 
 
-def test_safe_defaults_function():
+def test_exact_gpytorch_function():
     # Set safe defaults globally
-    safe_defaults()
+    exact_gpytorch()
 
     # Check that the settings are set to False
     assert linear_operator.settings._fast_covar_root_decomposition._default is False
